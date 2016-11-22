@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://172.17.90.49/Intensivo/index.php/app#/Administrar_seccion -->
+<html lang="en" ng-app="mppeuct" ng-init="iniciar = true" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title id="title" ng-bind="title" class="ng-binding">/Administrar_seccion</title>
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="http://172.17.90.49/Intensivo/publico/plugins/bootstrap/dist/css/bootstrap.css">
+
+        <link rel="stylesheet" href="http://172.17.90.49/Intensivo/publico/plugins/jAlert-master/src/jAlert-v3.css">
+        <link href="./_Administrar_seccion_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+        <!-- MetisMenu CSS -->
+        <link href="http://172.17.90.49/Intensivo/publico/plugins/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+        <!-- Timeline CSS -->
+        <link href="./_Administrar_seccion_files/timeline.css" rel="stylesheet" type="text/css">
+
+        <link rel="stylesheet" type="text/css" href="./_Administrar_seccion_files/jquery.dataTables.min.css">
+
+        <!-- Custom CSS -->
+        <link href="http://172.17.90.49/Intensivo/publico/styles/sb-admin-2.css" rel="stylesheet">
+
+
+        <link href="http://172.17.90.49/Intensivo/publico/plugins/morrisjs/morris.css" rel="stylesheet">
+
+        <link href="http://172.17.90.49/Intensivo/publico/styles/hover-min.css" rel="stylesheet" media="all">
+        <link href="http://172.17.90.49/Intensivo/publico/plugins/ngprogress-lite-master/ngprogress-lite.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://172.17.90.49/Intensivo/publico/styles/fileinput.css">
+        <link rel="stylesheet" href="http://172.17.90.49/Intensivo/publico/styles/bootstrap-datetimepicker.css">
+
+        <link rel="stylesheet" href="http://172.17.90.49/Intensivo/publico/styles/animate.css">
+
+        <link href="http://172.17.90.49/Intensivo/publico/styles/styles-app/style.css" rel="stylesheet">
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+
+
+    <body ng-controller="app" class="ng-scope" style="overflow: auto;">
+        
+        <br><br>
+        <div id="wrapper">
+
+            <div class="col-lg-10 col-lg-offset-1" style="background-color: white;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;margin-bottom: 15px;">
+
+                <div class="col-lg-12" style="background-color: white">
+                    <img class="img-responsive normativa-left" alt="" src="./_Administrar_seccion_files/normativa-izquierda-transparente.png">
+                    <img class="img-responsive normativa-right" alt="" src="./_Administrar_seccion_files/normativa-derecha.png">
+                </div>
+
+                <div>
+                    <img style="background-color: white;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;margin-bottom: 15px;margin-top: 15px" class="img-responsive banner" alt="" src="./_Administrar_seccion_files/intensivos2015.png">
+
+                </div> 
+
+<!-- Navigation -->
+
+
+<nav class="navbar navbar-default navbar-static-top barra-top " style="margin-bottom: 0;">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Sistema de Itensivos universitarios</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <em class="navbar-brand"> <b style="color: #a3303d" class=" fa fa-institution"></b>&nbsp; Sistema de Itensivos universitarios &nbsp;</em>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right in">
+
+
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle active" data-toggle="dropdown">
+                <i class="fa fa-user fa-fw top-barra"></i><i class="fa fa-caret-down"></i> &nbsp; Juan Soto<em>&nbsp;<b>( Representante (I.E.U.) )</b></em><b> </b>
+            </a>
+
+
+            <ul style="width: 100%" class="dropdown-menu dropdown-user">
+
+                <li><a href="http://172.17.90.49/Intensivo/index.php/Login/Cerrar" style="text-decoration:underline;"><b><i class="fa fa-sign-out fa-fw"></i>Cerrar sesión</b></a>
+                </li>
+            </ul>
+
+
+            <!-- /.dropdown-user -->
+        </li>
+
+        <!-- /.dropdown -->
+    </ul>
+
+    <!-- /.navbar-top-links -->
+    <br>
+    
+    <div style="background-color: white" class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav  in" id="side-menu">
+
+                
+                
+                
+                    <li>
+                        <a href="http://172.17.90.49/Intensivo/index.php/app#/Descarga_de_archivo" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Informacion y descarga de archivos</a>
+
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)" class=""><i class="fa fa-caret-right"></i> Gestionar profesores<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/Agregar_profesor" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Agregar</a>
+
+                            </li>
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/Administrar_profesores" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Administrar </a>
+
+                            </li>
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/materia_profesor" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Vincular materias</a>
+
+
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)" class=""><i class="fa fa-caret-right"></i> Gestionar estudiantes<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/Agregar_estudiante" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Agregar</a>
+
+                            </li>
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/Administrar_estudiantes" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Administrar </a>
+
+                            </li>
+
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    
+                    <li class="active">
+                        <a href="javascript:void(0)" class="active"><i class="fa fa-caret-right"></i> Gestionar sección<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse in" aria-expanded="true">
+                           
+                            <li>
+                                <a href="./_Administrar_seccion_files/_Administrar_seccion.html" class="active"><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Administrar </a>
+
+                            </li>
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:void(0)" class=""><i class="fa fa-caret-right"></i> Gestionar materias<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/Agregar_materia" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Agregar</a>
+
+                            </li>
+                            <li>
+                                <a href="http://172.17.90.49/Intensivo/index.php/app#/Administrar_materias" class=""><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Administrar </a>
+
+                            </li>
+
+
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
+
+                
+                </ul></div></div></nav>
+
+        <div id="page-wrapper" style="min-height: 705px;">
+
+    
+        <!--<div  id="page-wrapper" style=" position: inherit;padding: 0 30px;margin: 0;border-left:0; " >-->
+
+    <!-- ngView:  --><div id="bucle" ng-view="" class="page " style=""><br class="ng-scope">
+<!--instalar capcha-->
+
+<!-- /.row -->
+<div class="row animated fadeIn col-lg-10 col-lg-offset-1 ng-scope">
+
+
+    <form id="solicitante_form" method="post" name="Form_registrar_seccion" class="form-horizontal inicio ng-pristine ng-invalid ng-invalid-required">
+
+        <div class="panel panel-info ">
+
+            <div class="panel-heading">
+
+                <h4>Registrar secciones </h4>
+            </div>
+            <div class="panel-body">
+                <fieldset style="text-align: left;">
+
+                    <div class="form-group">
+                        <label class="control-label control-label col-lg-3 col-md-3 col-xs-12">Nombre:</label>
+                        <div class="control-label col-lg-9 col-md-9 col-xs-12">
+                            <input ng-model="formData.nombre_seccion" type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="" name="nombre_seccion" placeholder="Nombre" required="">
+                            <!-- ngIf: Form_registrar_seccion.$dirty && Form_registrar_seccion.nombre_seccion.$error.required -->
+
+                        </div>
+                    </div>
+
+
+            </fieldset></div>
+            <div class="panel-footer">
+
+                <div class="form-group">
+                    <div id="botoms" class=" col-xs-12  " style="text-align: center;">
+
+
+                        <button ng-click="formData = {}" type="button" class="submit btn 
+
+                                  btn-success
+
+                                  ">
+                            Limpiar   
+
+                        </button>
+
+
+                        <button ng-click="Form_registrar_seccion.$valid ? registrar(formData) : &#39;&#39;" ng-class="Form_registrar_seccion.$valid != false ? &#39;&#39; : &#39;disabled&#39;" type="button" class="submit btn  btn-primary   disabled"> Registrar </button>
+
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row animated fadeIn col-lg-12 ng-scope">
+
+    <div class="panel panel-success">
+
+        <div class="panel-heading">
+
+            <h4>Administrar profesores</h4>
+        </div>
+        <div class="panel-body">
+            <fieldset style="text-align: left;">
+
+                <div class="table-responsive">          
+                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Mostrar <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> registros</label></div><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Buscar:<input type="search" class="" placeholder="" aria-controls="DataTables_Table_0"></label></div><table datatable="ng" dt-options="dtOptions" table="" class="display  cell-border hover order-column stripe tabla_consulta ng-isolate-scope no-footer dataTable" cellspacing="0" width="100%" style="display: table; width: 100%;" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                        <colgroup class="ng-scope"><col style="width: 2%">
+                        <col style="width: 50%">
+                        <col style="width: 40%">
+
+                        </colgroup><thead class="ng-scope">
+                            <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: Activar para ordenar la columna de manera descendente" style="width: 8px;">#</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Nombre(s): Activar para ordenar la columna de manera ascendente" style="width: 380px;">Nombre(s)</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Fecha: Activar para ordenar la columna de manera ascendente" style="width: 295px;">Fecha</th><th style="min-width: 90px; width: 90px;" class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Acción: Activar para ordenar la columna de manera ascendente">Acción</th></tr>
+                        </thead>
+
+                        <tbody class="table_bandeja_apro_tbody ng-scope">
+                            <!-- ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones --><!-- end ngRepeat: (y,x) in busqueda.secciones -->
+                        <tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope odd" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">1</td>
+                                <td class="ng-binding">sección 1</td>
+                                <td class="ng-binding">21-07-2016 14:07:30</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-danger">Inactivar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope even" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">2</td>
+                                <td class="ng-binding">sección 2</td>
+                                <td class="ng-binding">21-07-2016 14:07:41</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-danger">Inactivar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope odd" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">3</td>
+                                <td class="ng-binding">sección 3</td>
+                                <td class="ng-binding">21-07-2016 14:07:42</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-danger">Inactivar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope even" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">4</td>
+                                <td class="ng-binding">sdfsdfsdf</td>
+                                <td class="ng-binding">21-07-2016 14:07:00</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-danger">Inactivar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope odd" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">5</td>
+                                <td class="ng-binding">hola yudde</td>
+                                <td class="ng-binding">21-07-2016 14:07:02</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-danger">Inactivar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope even" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">6</td>
+                                <td class="ng-binding">dddddddddd</td>
+                                <td class="ng-binding">21-07-2016 14:07:03</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-danger">Inactivar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope odd" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">7</td>
+                                <td class="ng-binding">dsdadasd</td>
+                                <td class="ng-binding">21-07-2016 14:07:04</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-success">Activar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr><tr ng-repeat="(y,x) in busqueda.secciones" class="ng-scope even" role="row">
+                                <td style="color:#337ab7; font-weight: bold" class="ng-binding sorting_1">8</td>
+                                <td class="ng-binding">ggggggggggggg</td>
+                                <td class="ng-binding">21-07-2016 14:07:06</td>
+                               
+                                <td style="text-align: left;width: 200px;">
+                                    <button ng-click="cambiar_estatus(x.id_seccion, x.activo == &#39;t&#39; ? &#39;false&#39; : &#39;true&#39;, x.activo == &#39;t&#39; ? &#39;inactivar&#39; : &#39;activar&#39;)" href="javascript:void(0)" ng-class="x.activo == &#39;t&#39;?&#39;btn-danger&#39;:&#39;btn-success&#39;" class="btn  btn-xs  ng-binding btn-success">Activar<div class="ripple-container"></div></button>
+
+                                </td>
+                            </tr></tbody>
+                    </table><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Mostrando registros del 1 al 8 de un total de 8 registros</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">Anterior</a><span><a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" id="DataTables_Table_0_next">Siguiente</a></div></div><h3 class="dt-loading" style="display: none;">Loading...</h3>
+                </div>
+
+            </fieldset>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- /.col-lg-12 -->
+
+</div>
+<div class=" modal" id="mymodal" role="dialog">
+    <div class="modal-dialog modal-lg animated zoomIn">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title"> <em style="color:#3c8dbc" class="ng-binding">  </em> /  <span style="color: #999"> N° Cédula :</span> <b class="ng-binding"></b></h4>               
+            </div>
+            <div class=" modal-body">
+                <!-- ngInclude:  -->
+
+            </div>
+            <div class="modal-footer">
+                <div ng-bind="modal.footer" class="ng-binding"></div>
+                <br>
+                <button ng-click="ejemplo()" type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br>
+
+</div>
+
+<!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+<div class="col-lg-12" style="padding-left: 0px;padding-right: 0px;">
+    <section class="footer" style="border-top: 1px solid #e7e7e7">
+
+        <h4 class="footer-title-ministerio">
+            <br>Ministerio del Poder Popular
+            para Educación Universitaria, Ciencia y Tecnología&nbsp; <em style="font-size: 10px;">Copyleft © 2016 MPPEUCT - RIF: G-20011296-4</em></h4>
+        <br>
+    </section>
+
+</div>
+
+</div>
+<!-- /#wrapper -->
+
+
+
+
+
+<script src="./_Administrar_seccion_files/jquery.min.js"></script>
+<script src="./_Administrar_seccion_files/bootstrap.min.js"></script>
+
+
+<script src="./_Administrar_seccion_files/jAlert-v3.js"></script>
+<script src="./_Administrar_seccion_files/angular.min.js"></script>
+<script src="./_Administrar_seccion_files/angular-sanitize.min.js"></script>
+<script src="./_Administrar_seccion_files/ngprogress-lite.min.js"></script>
+
+
+<script src="./_Administrar_seccion_files/angular-route.min.js"></script>
+<script src="./_Administrar_seccion_files/angular-locale_es-es.js"></script>
+<script src="./_Administrar_seccion_files/angular-animate.js"></script>
+<script src="./_Administrar_seccion_files/jquery.dropdown.js"></script>
+
+
+<script type="text/javascript" charset="utf8" src="./_Administrar_seccion_files/jquery.dataTables.js"></script>
+
+<script data-require="angular-datatable.js@1.1.5" data-semver="1.1.5" src="./_Administrar_seccion_files/angular-datatables.min.js"></script>
+
+<script src="./_Administrar_seccion_files/moment-with-locales.js" type="text/javascript"></script>
+<script src="./_Administrar_seccion_files/bootstrap-datetimepicker.js" type="text/javascript"></script>
+
+<script src="./_Administrar_seccion_files/fileinput.js" type="text/javascript"></script>
+<script src="./_Administrar_seccion_files/fileinput_locale_es.js" type="text/javascript"></script>
+
+<script src="./_Administrar_seccion_files/metisMenu.min.js"></script>
+<script src="./_Administrar_seccion_files/sb-admin-2.js"></script>
+
+
+<script>
+                    var base_url = "http://172.17.90.49/Intensivo/";
+                    var id_perfil = 3;
+</script>
+
+<script src="./_Administrar_seccion_files/home.js" type="text/javascript"></script>
+
+
+
+
+</body></html>
