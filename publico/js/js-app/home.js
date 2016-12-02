@@ -70,8 +70,6 @@ mppeuct.config(['$routeProvider', 'ngProgressLiteProvider', function ($routeProv
                 controller: 'En_curso'
             });
 
-
-
         }
 
         if (id_perfil == 4) {
@@ -96,9 +94,8 @@ mppeuct.config(['$routeProvider', 'ngProgressLiteProvider', function ($routeProv
 
 
         $routeProvider.otherwise({
-            redirectTo: '/Inicio'
+            redirectTo: '/En_curso'
         });
-
 
     }]);
 

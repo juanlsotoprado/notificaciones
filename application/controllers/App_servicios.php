@@ -326,7 +326,7 @@ class App_servicios extends CI_Controller {
             $params['casos'] = 'ldap';
         }
 
-        error_log(print_r($params, true));
+      //  error_log(print_r($params, true));
 
         $this->Respuesta_json($params);
     }

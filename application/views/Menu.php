@@ -48,10 +48,9 @@ box-shadow: -1px 29px 22px -23px rgba(0,0,0,0.43);">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav " id="side-menu">
 
-                    <li>
+<!--                    <li>
                         <a href="#/Inicio" class='{{ liActive == "/Inicio"? "active":"" }}'><i class="fa fa-caret-right" aria-hidden="true"></i> &nbsp;Inicio</a>
-                    </li>
-
+                    </li>-->
 
                 <?php if ($user_sesion['id_perfil'] == 1) { ?>
                     <li >

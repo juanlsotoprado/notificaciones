@@ -41,7 +41,7 @@ class General extends CI_Model {
               id_mensaje  =  " . $data['id'] . "
                 ";
 
-            error_log($query);
+           // error_log($query);
 
 
             $result2 = $this->db->simple_query($query);
@@ -124,7 +124,7 @@ class General extends CI_Model {
             ORDER BY fecha_creacion DESC";
 
 
-         error_log(print_r($query, true));
+        error_log(print_r($query, true));
 
 
 
@@ -241,13 +241,13 @@ class General extends CI_Model {
             $this->db->trans_commit();
 
             if (empty($data['modificar'])) {
-                
+
                 $mensaje = '<p><span style="font-family: Arial; font-size: 
-                    14px; line-height: 1.2;"><b>Sr(a).  ' .  $data['nombreApellido']. '</b><br><br> Se le informa que fue registrado en el <b> Sistema de Notificaciones.</b> <br><br>
+                    14px; line-height: 1.2;"><b>Sr(a).  ' . $data['nombreApellido'] . '</b><br><br> Se le informa que fue registrado en el <b> Sistema de Notificaciones.</b> <br><br>
                      Para ingresar por favor vaya a la página: <a href="http://notificaciones.prueba.mppeuct.gob.ve/"> http://notificaciones.prueba.mppeuct.gob.ve/</a>  &nbsp;<br><br>
                      El ingreso al sistema sera con su <b>usuario<b/> y <b>clave<b/> del correo institucional.</p>';
 
-                $this->Enviar_correo("MPPEUCT(notificación)",$data['correo'],'Creación de usuario en el Sistema de Notificaciónes.', $mensaje);
+                $this->Enviar_correo("MPPEUCT(notificación)", $data['correo'], 'Creación de usuario en el Sistema de Notificaciónes.', $mensaje);
             }
 
 
@@ -418,18 +418,12 @@ class General extends CI_Model {
                  now(),
                '" . $data['fecha_inicio'] . "'
 
-                   
-              
-                )
+                  )
                 ";
 
             //  error_log($query);
 
-
-
-
             $result2 = $this->db->simple_query($query);
-
 
             if (!$result2)
                 throw new Exception("Error al insertar mensaje_enviados_traza. query : " . $query);

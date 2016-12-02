@@ -48,7 +48,6 @@
 <script src="<?php echo base_url('publico/js/fileinput_locale_es.js'); ?>"type="text/javascript"></script>
 
 <script src="<?php echo base_url('publico/plugins/metisMenu/dist/metisMenu.min.js'); ?>"></script>
-<script src="<?php echo base_url('publico/js/sb-admin-2.js'); ?>"></script>
 
 <script src=<?php echo base_url('publico/plugins/textAngular-1.5.12/dist/textAngular-rangy.min.js'); ?>></script>
 <script src=<?php echo base_url('publico/plugins/textAngular-1.5.12/dist/textAngular-sanitize.min.js'); ?>></script>
