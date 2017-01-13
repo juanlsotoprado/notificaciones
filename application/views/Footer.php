@@ -52,13 +52,14 @@
 <script src=<?php echo base_url('publico/plugins/textAngular-1.5.12/dist/textAngular-rangy.min.js'); ?>></script>
 <script src=<?php echo base_url('publico/plugins/textAngular-1.5.12/dist/textAngular-sanitize.min.js'); ?>></script>
 <script src=<?php echo base_url('publico/plugins/textAngular-1.5.12/dist/textAngular.min.js'); ?>></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.4.0.js"></script>
 
-<script>
-    const base_url = "<?php echo base_url(); ?>";
-    const id_perfil = "<?php echo $user_sesion['id_perfil']; ?>";
-</script>
 
-<script src="<?php echo base_url('publico/js/js-app/home.js'); ?>"type="text/javascript"></script>
+    <script>
+        const base_url = "<?php echo base_url(); ?>";
+                const id_perfil = "<?php echo $user_sesion['id_perfil']; ?>";</script>
+
+    <script src="<?php echo base_url('publico/js/js-app/home.js'); ?>"type="text/javascript"></script>
 
 </body>
 

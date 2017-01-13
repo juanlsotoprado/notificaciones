@@ -11,7 +11,7 @@
         </div>
         <div class="panel-body">
 
-            <fieldset style="text-align: left;"  >
+            <fieldset style="text-align: left;" >
 
                 <div class="table-responsive">          
                     <table datatable="ng" dt-options="dtOptions"table class="display  cell-border hover order-column stripe tabla_consulta"  cellspacing="0" width="100%">
@@ -25,7 +25,7 @@
                                 <th >Fecha creación</th>
                                 <th >Fecha de envio</th>
                                 <th >Funcionario</th>
-                                <th >Estatus</th>
+                                <th style="width: 150px">Progreso de envio</th>
                                 <th >Acción</th>
 
 
@@ -40,9 +40,9 @@
                                 <td> {{x.fecha_creacion}}</td>
                                 <td> {{x.fecha_envio}}</td>
                                 <td> {{x.nombre_apellido}}</td>
-                                <td> <b>En proceso</b></td>
+                                <td><uib-progressbar class="progress-striped active" max="x.total" value="x.progreso" type="info"><i>{{x.progreso +" / "+ x.total}}</i></uib-progressbar></div></td>
                                 <td style="text-align: left;">
-                                    <button  ng-click="cambiar_estatus(x.id_mensaje,x.tipo)" href="javascript:void(0)"  class="btn  btn-xs btn-warning">Cancelar<div class="ripple-container"></div></button>
+                                    <button  ng-click="cambiar_estatus(x.id_mensaje, x.tipo)" href="javascript:void(0)"  class="btn  btn-xs btn-warning">Cancelar<div class="ripple-container"></div></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -52,7 +52,9 @@
             </fieldset>
 
         </div>
-
+        
+       
+        
 
     </div>
 

@@ -1,7 +1,7 @@
 // Creación del módulo
 var msn_exito = 'Se ha procesado  exitosamente';
 var msn_error = 'Ha ocurrido un error al procesar';
-var mppeuct = angular.module('mppeuct', ['ngRoute', 'ngSanitize', 'ngProgressLite', 'datatables', 'textAngular']);
+var mppeuct = angular.module('mppeuct', ['ngRoute', 'ngSanitize', 'ngProgressLite', 'datatables', 'textAngular', 'ui.bootstrap']);
 
 // Configuración de las rutas
 mppeuct.config(['$routeProvider', 'ngProgressLiteProvider', function ($routeProvider, ngProgressLiteProvider) {
@@ -132,14 +132,14 @@ mppeuct.controller('En_curso', ["$scope", "$window", "$rootScope", 'ngProgressLi
 
         $interval(function () {
             $scope.en_curso();
-        }, 100000);
+        }, 30000);
 
         $scope.en_curso = function () {
 
             $http.post(base_url + "index.php/App_servicios/Get_trans/")
                     .success(function (respuesta) {
 
-                        // console.log(respuesta.casos);
+                        //console.log(respuesta.casos);
 
                         if (String(respuesta.casos).trim() != 'false') {
 

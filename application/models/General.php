@@ -41,7 +41,7 @@ class General extends CI_Model {
               id_mensaje  =  " . $data['id'] . "
                 ";
 
-           // error_log($query);
+            // error_log($query);
 
 
             $result2 = $this->db->simple_query($query);
@@ -65,18 +65,24 @@ class General extends CI_Model {
         $data_session = $this->session->all_userdata();
 
         $query = "SELECT *
-                FROM
-                  (SELECT 'C' AS tipo,
-                          u.nombre_apellido,
-                          m.asunto AS mensaje,
-                          to_char(c.fecha_creacion, 'DD-MM-YYYY HH24:mm:ss') AS fecha_creacion,
-                          to_char(c.fecha_envio, 'DD-MM-YYYY HH24:mm:ss') AS fecha_envio,
-                          c.id_mensaje
-                   FROM usuario u
-                   INNER JOIN correos c on(u.id = c.id_usuario)
-                   INNER JOIN mensaje m on(m.id = c.id_mensaje)
-                   WHERE c.fecha_enviado IS NULL
-                     AND c.estatus != FALSE ";
+FROM
+  ( SELECT 'C' AS tipo,
+           u.nombre_apellido,
+           m.asunto AS mensaje,
+           to_char(c.fecha_creacion, 'DD-MM-YYYY HH24:mm:ss') AS fecha_creacion,
+           to_char(c.fecha_envio, 'DD-MM-YYYY HH24:mm:ss') AS fecha_envio,
+           c.id_mensaje,
+           count(c.id_mensaje) AS total,
+
+     (SELECT count(id_mensaje)
+      FROM correos
+      WHERE id_mensaje = c.id_mensaje
+        AND fecha_enviado IS NOT NULL
+        AND estatus != FALSE ) AS progreso
+   FROM usuario u
+   INNER JOIN correos c on(u.id = c.id_usuario)
+   INNER JOIN mensaje m on(m.id = c.id_mensaje)
+   WHERE c.estatus != FALSE";
 
         if ($data_session['id_perfil'] != 1) {
 
@@ -87,25 +93,34 @@ class General extends CI_Model {
 
 
         $query .= " GROUP BY u.nombre_apellido,
-                            m.mensaje,
-                            m.asunto,
-                            c.fecha_creacion,
-                            c.fecha_envio,
-                            c.id_mensaje
+            m.mensaje,
+            m.asunto,
+            c.fecha_creacion,
+            c.fecha_envio,
+            c.id_mensaje
+   HAVING count(c.id_mensaje) !=
+     (SELECT count(id_mensaje)
+      FROM correos
+      WHERE id_mensaje = c.id_mensaje
+        AND fecha_enviado IS NOT NULL
+        AND estatus != FALSE )
+   UNION SELECT 'S' AS tipo,
+                u.nombre_apellido,
+                m.mensaje AS mensaje,
+                to_char(s.fecha_creacion, 'DD-MM-YYYY HH24:mm:ss') AS fecha_creacion,
+                to_char(s.fecha_envio, 'DD-MM-YYYY HH24:mm:ss') AS fecha_envio,
+                s.id_mensaje,
+                count(s.id_mensaje) AS total,
 
-                   UNION 
-
-                   SELECT 'S' AS tipo,
-                                u.nombre_apellido,
-                                m.mensaje AS mensaje,
-                                to_char(s.fecha_creacion, 'DD-MM-YYYY HH24:mm:ss') AS fecha_creacion,
-                                to_char(s.fecha_envio, 'DD-MM-YYYY HH24:mm:ss') AS fecha_envio,
-                                s.id_mensaje
-                   FROM usuario u
-                   INNER JOIN sms s on(u.id = s.id_usuario)
-                   INNER JOIN mensaje m on(m.id = s.id_mensaje)
-                   WHERE s.fecha_enviado IS NULL
-                     AND s.estatus != FALSE ";
+     (SELECT count(id_mensaje)
+      FROM sms
+      WHERE id_mensaje = s.id_mensaje
+        AND fecha_enviado IS NOT NULL
+        AND estatus != FALSE ) AS progreso
+   FROM usuario u
+   INNER JOIN sms s on(u.id = s.id_usuario)
+   INNER JOIN mensaje m on(m.id = s.id_mensaje)
+   WHERE s.estatus != FALSE";
 
         if ($data_session['id_perfil'] != 1) {
 
@@ -115,16 +130,22 @@ class General extends CI_Model {
 
 
 
-        $query .= "   GROUP BY u.nombre_apellido,
-                        m.mensaje,
-                        m.asunto,
-                        s.fecha_creacion,
-                        s.fecha_envio,
-                        s.id_mensaje) AS TABLA
-            ORDER BY fecha_creacion DESC";
+        $query .= " GROUP BY u.nombre_apellido,
+            m.mensaje,
+            m.asunto,
+            s.fecha_creacion,
+            s.fecha_envio,
+            s.id_mensaje
+   HAVING count(s.id_mensaje) !=
+     (SELECT count(id_mensaje)
+      FROM sms
+      WHERE id_mensaje = s.id_mensaje
+        AND fecha_enviado IS NOT NULL
+        AND estatus != FALSE )
+    ) AS tabla ORDER BY fecha_creacion DESC";
 
 
-        error_log(print_r($query, true));
+      //  error_log(print_r($query, true));
 
 
 

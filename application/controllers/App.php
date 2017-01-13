@@ -16,6 +16,9 @@ class App extends CI_Controller {
         }
 
         $this->load->model('General');
+        
+         error_log(print_r($data['user_sesion'],true));
+        
     }
 
     public function index() {
@@ -24,7 +27,6 @@ class App extends CI_Controller {
         //  error_log(print_r($this->session->all_userdata(), true));
 
         $data['user_sesion'] = $this->session->all_userdata();
-
 
 
         $this->load->view('Header', $data);
@@ -40,6 +42,8 @@ class App extends CI_Controller {
     
     	$data['user_sesion'] = $this->session->all_userdata();
     	$this->load->view('App/Inicio', $data);
+        
+
     
     }
 
@@ -47,6 +51,7 @@ class App extends CI_Controller {
 
         $data['user_sesion'] = $this->session->all_userdata();
         $this->load->view('App/En_curso', $data);
+
         
     }
     
@@ -55,6 +60,9 @@ class App extends CI_Controller {
         $data['user_sesion'] = $this->session->all_userdata();
 
         $this->load->view('App/Enviar_correo_masivo', $data);
+        
+                        
+
     }
 
     public function Enviar_mensaje_masivo() {

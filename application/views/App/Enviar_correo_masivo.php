@@ -7,7 +7,6 @@
         <h3><em style="color: #666"> Enviar correo masivo <hr></em></h3>
 
         <div class="panel panel-info" >
-
             <div class="panel-heading">
 
                 <h4>Cargar direcciones de correo</h4>
@@ -25,8 +24,6 @@
                                name="calc" type="file" class="file" ng-model="formData.correo" 
                                multiple>
                         <span class="label-red" ng-if=" !correos || correos == 'false' || correos.length < 1">Debe subir un archivo .xls</span>
-
-
 
                     </div>
                 </div>
